@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRONWOLF GAMES</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ background:#080808;color:#eee;
+ font-family:Arial,sans-serif;
+ line-height:1.8
+}
+header{
+ padding:22px 7%;
+ display:flex;justify-content:space-between;
+ align-items:center;border-bottom:1px solid #333;
+ flex-wrap:wrap;gap:15px
+}
+.logo{font-size:22px;font-weight:bold;color:#ddd}
+.logo span{color:#999}
+nav a{
+ color:#ccc;text-decoration:none;
+ margin:0 8px;font-size:14px
+}
+.hero{
+ min-height:490px;display:flex;
+ flex-direction:column;justify-content:center;
+ align-items:center;text-align:center;padding:50px 20px;
+ background:radial-gradient(ellipse at center,#252525 0%,#080808 70%)
+}
+.wolf{font-size:65px}
+.hero h1{font-size:clamp(32px,7vw,65px);letter-spacing:2px}
+.hero h2{color:#aaa;font-size:20px;margin:8px}
+.hero p{color:#aaa;max-width:550px;margin:15px}
+.btn{
+ display:inline-block;padding:12px 27px;
+ border:1px solid #aaa;color:white;
+ text-decoration:none;border-radius:5px;
+ margin-top:18px;transition:.3s
+}
+.btn:hover{background:#ddd;color:#111}
+section{padding:65px 8%;text-align:center}
+h3{font-size:29px;margin-bottom:18px;color:#ddd}
+.line{width:55px;height:3px;background:#aaa;margin:0 auto 25px}
+section p{color:#aaa;max-width:700px;margin:auto}
+.cards{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px;margin-top:35px
+}
+.card{
+ background:#141414;border:1px solid #333;
+ padding:28px 18px;border-radius:10px
+}
+.card h4{font-size:21px;margin-bottom:10px}
+.card p{font-size:14px}
+footer{
+ border-top:1px solid #333;text-align:center;
+ padding:25px;color:#888;font-size:13px
+}
+.lang{
+ background:#222;color:#eee;border:1px solid #555;
+ padding:8px 13px;border-radius:5px
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">IRONWOLF <span>GAMES</span></div>
+ <nav>
+  <a href="#home" id="navHome">الرئيسية</a>
+  <a href="#about" id="navAbout">من نحن</a>
+  <a href="#games" id="navGames">ألعابنا</a>
+  <a href="#contact" id="navContact">تواصل معنا</a>
+ </nav>
+ <button class="lang" onclick="changeLang()">English</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="wolf">🐺</div>
+ <h1>IRONWOLF GAMES</h1>
+ <h2 id="heroTitle">نصنع عوالم من الخيال</h2>
+ <p id="heroText">استوديو مستقل لتطوير الألعاب والتطبيقات الرقمية. نؤمن أن كل فكرة عظيمة تبدأ بخطوة.</p>
+ <a href="#games" class="btn" id="heroBtn">اكتشف ألعابنا</a>
+</section>
+
+<section id="about">
+ <h3 id="aboutTitle">من نحن؟</h3>
+ <div class="line"></div>
+ <p id="aboutText">IRONWOLF GAMES هو استوديو مستقل يهدف إلى تطوير ألعاب وتطبيقات رقمية ممتعة ومبتكرة، مع التركيز على الجودة والإبداع والتطور المستمر.</p>
+</section>
+
+<section id="games">
+ <h3 id="gamesTitle">ألعابنا ومشاريعنا</h3>
+ <div class="line"></div>
+ <div class="cards">
+  <div class="card">
+   <h4>STREET EMPIRE</h4>
+   <p id="gameDesc">لعبة من تطوير IRONWOLF GAMES.</p>
+  </div>
+  <div class="card">
+   <h4>COMING SOON</h4>
+   <p id="comingDesc">مشاريع وألعاب جديدة قيد التطوير.</p>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <h3 id="contactTitle">تواصل معنا</h3>
+ <div class="line"></div>
+ <p id="contactText">تابع أخبارنا وأحدث مشاريعنا من خلال صفحاتنا الرسمية.</p>
+ <a class="btn" href="https://www.facebook.com/" target="_blank" id="facebookBtn">Facebook</a>
+</section>
+</main>
+
+<footer>
+ © 2026 IRONWOLF GAMES — All Rights Reserved
+</footer>
+
+<script>
+let english=false;
+function changeLang(){
+ english=!english;
+ document.documentElement.lang=english?"en":"ar";
+ document.documentElement.dir=english?"ltr":"rtl";
+ document.querySelector(".lang").textContent=english?"العربية":"English";
+ const words={
+ navHome:["الرئيسية","Home"],
+ navAbout:["من نحن","About"],
+ navGames:["ألعابنا","Games"],
+ navContact:["تواصل معنا","Contact"],
+ heroTitle:["نصنع عوالم من الخيال","WE BUILD WORLDS"],
+ heroText:["استوديو مستقل لتطوير الألعاب والتطبيقات الرقمية. نؤمن أن كل فكرة عظيمة تبدأ بخطوة.","An independent studio creating games and digital experiences. Every great idea starts with a step."],
+ heroBtn:["اكتشف ألعابنا","EXPLORE OUR GAMES"],
+ aboutTitle:["من نحن؟","WHO WE ARE"],
+ aboutText:["IRONWOLF GAMES هو استوديو مستقل يهدف إلى تطوير ألعاب وتطبيقات رقمية ممتعة ومبتكرة، مع التركيز على الجودة والإبداع والتطور المستمر.","IRONWOLF GAMES is an independent studio focused on creating enjoyable and innovative games and digital experiences."],
+ gamesTitle:["ألعابنا ومشاريعنا","OUR GAMES & PROJECTS"],
+ gameDesc:["لعبة من تطوير IRONWOLF GAMES.","A game developed by IRONWOLF GAMES."],
+ comingDesc:["مشاريع وألعاب جديدة قيد التطوير.","New games and projects are in development."],
+ contactTitle:["تواصل معنا","CONTACT US"],
+ contactText:["تابع أخبارنا وأحدث مشاريعنا من خلال صفحاتنا الرسمية.","Follow our news and latest projects through our official pages."],
+ facebookBtn:["Facebook","Facebook"]
+ };
+ for(const id in words)
+ document.getElementById(id).textContent=words[id][english?1:0];
+}
+</script>
+</body>
+</html>
